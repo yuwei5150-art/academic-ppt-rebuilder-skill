@@ -2,39 +2,56 @@
 
 A Codex skill/plugin for rebuilding academic PowerPoint decks from papers, outlines, templates, AI-generated slide reference images, and GPT-extracted PNG asset packs.
 
-## Recommended Install
+## Recommended Online Install
 
-This method requires **Node.js**, **Codex CLI**, and **Git**.
+This is the most reliable online install path today. It does not require downloading a zip file manually.
 
-On Windows, if `codex` or `npm` is blocked by PowerShell script policy, use the `.cmd` form, for example `codex.cmd` and `npm.cmd`.
+### Windows PowerShell
 
-### 1. Install prerequisites
-
-Install Node.js LTS from <https://nodejs.org>.
-
-Install Git for Windows from <https://git-scm.com/download/win>. During setup, keep the default option that lets Git run from the command line.
-
-Then install and log in to Codex CLI:
+Open PowerShell in the project where you want to use the skill, then run:
 
 ```powershell
-npm.cmd install -g @openai/codex
-codex.cmd login
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/yuwei5150-art/academic-ppt-rebuilder-skill/main/install.ps1 | iex"
 ```
 
-Check that both commands work:
+This installs the skill into:
 
-```powershell
-git --version
-codex.cmd --version
+```text
+.agents/skills/academic-ppt-rebuilder/
 ```
 
-### 2. Add this plugin marketplace
+### macOS / Linux
+
+Open a terminal in the project where you want to use the skill, then run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yuwei5150-art/academic-ppt-rebuilder-skill/main/install.sh | bash
+```
+
+## Use In Codex
+
+After installing, open Codex in that project and run:
+
+```text
+/skills
+```
+
+Confirm `academic-ppt-rebuilder` appears, then ask:
+
+```text
+使用 academic-ppt-rebuilder skill，读取页面参考图、PNG素材包和真实文本，临摹重建为可编辑学术PPT，并输出PPTX和可编辑性报告。
+```
+
+## Experimental Codex Plugin Marketplace
+
+This repository also includes a Codex plugin marketplace structure. Current Codex CLI versions can add and upgrade the marketplace, but may not expose install/list UI in every environment yet.
 
 ```powershell
 codex.cmd plugin marketplace add yuwei5150-art/academic-ppt-rebuilder-skill
+codex.cmd plugin marketplace upgrade yuwei5150-art-codex-plugins
 ```
 
-Then open Codex plugins, find **Academic PPT Rebuilder**, and install or enable it.
+If the plugin does not appear in `/plugins` or `/skills`, use the online installer above.
 
 ## What It Does
 
@@ -55,6 +72,8 @@ The skill emphasizes editable text, PPT-native shapes, academic clarity, consist
 ```text
 academic-ppt-rebuilder-skill/
   README.md
+  install.ps1
+  install.sh
   .agents/
     plugins/
       marketplace.json
@@ -71,7 +90,7 @@ academic-ppt-rebuilder-skill/
       openai.yaml
 ```
 
-The `plugins/` folder is the recommended Codex plugin marketplace package. The top-level `academic-ppt-rebuilder/` folder is kept for manual skill installation.
+The `academic-ppt-rebuilder/` folder is the stable skill package. The `plugins/` folder is kept for Codex plugin marketplace support.
 
 ## Manual Skill Install
 
@@ -79,14 +98,6 @@ Copy the `academic-ppt-rebuilder/` folder into a Codex skills directory, for exa
 
 ```text
 .agents/skills/academic-ppt-rebuilder/
-```
-
-## Use
-
-Example prompt:
-
-```text
-使用 academic-ppt-rebuilder skill，读取页面参考图、PNG素材包和真实文本，临摹重建为可编辑学术PPT，并输出PPTX和可编辑性报告。
 ```
 
 ## Notes
