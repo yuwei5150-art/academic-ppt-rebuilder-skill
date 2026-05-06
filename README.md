@@ -4,10 +4,34 @@ A Codex skill/plugin for rebuilding academic PowerPoint decks from papers, outli
 
 ## Recommended Install
 
-Add this repository as a Codex plugin marketplace:
+This method requires **Node.js**, **Codex CLI**, and **Git**.
 
-```bash
-codex plugin marketplace add yuwei5150-art/academic-ppt-rebuilder-skill
+On Windows, if `codex` or `npm` is blocked by PowerShell script policy, use the `.cmd` form, for example `codex.cmd` and `npm.cmd`.
+
+### 1. Install prerequisites
+
+Install Node.js LTS from <https://nodejs.org>.
+
+Install Git for Windows from <https://git-scm.com/download/win>. During setup, keep the default option that lets Git run from the command line.
+
+Then install and log in to Codex CLI:
+
+```powershell
+npm.cmd install -g @openai/codex
+codex.cmd login
+```
+
+Check that both commands work:
+
+```powershell
+git --version
+codex.cmd --version
+```
+
+### 2. Add this plugin marketplace
+
+```powershell
+codex.cmd plugin marketplace add yuwei5150-art/academic-ppt-rebuilder-skill
 ```
 
 Then open Codex plugins, find **Academic PPT Rebuilder**, and install or enable it.
