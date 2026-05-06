@@ -1,0 +1,39 @@
+{
+  "name": "academic-ppt-rebuilder",
+  "version": "1.0.0",
+  "description": "Rebuild editable academic PowerPoint decks from papers, slide reference images, PNG assets, and real text.",
+  "author": {
+    "name": "yuwei5150-art",
+    "url": "https://github.com/yuwei5150-art"
+  },
+  "homepage": "https://github.com/yuwei5150-art/academic-ppt-rebuilder-skill",
+  "repository": "https://github.com/yuwei5150-art/academic-ppt-rebuilder-skill",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skill",
+    "powerpoint",
+    "academic",
+    "ppt",
+    "presentation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Academic PPT Rebuilder",
+    "shortDescription": "Rebuild editable academic PPT decks",
+    "longDescription": "Convert academic source materials, AI-generated slide reference images, target template style, extracted PNG asset packs, and real text into editable academic PowerPoint decks with a clear editability report.",
+    "developerName": "yuwei5150-art",
+    "category": "Productivity",
+    "capabilities": [
+      "Write",
+      "Presentations",
+      "Academic workflows"
+    ],
+    "websiteURL": "https://github.com/yuwei5150-art/academic-ppt-rebuilder-skill",
+    "defaultPrompt": [
+      "Use $academic-ppt-rebuilder to rebuild an editable academic PPT.",
+      "Use $academic-ppt-rebuilder with my PNG assets and slide refs."
+    ],
+    "brandColor": "#1D4ED8"
+  }
+}
