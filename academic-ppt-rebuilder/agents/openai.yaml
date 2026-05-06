@@ -1,0 +1,7 @@
+interface:
+  display_name: "Academic PPT Rebuilder"
+  short_description: "Rebuild editable academic PPT decks"
+  brand_color: "#1D4ED8"
+  default_prompt: "Use $academic-ppt-rebuilder to rebuild an editable academic PPT from slide reference images, PNG assets, and real text."
+policy:
+  allow_implicit_invocation: true
