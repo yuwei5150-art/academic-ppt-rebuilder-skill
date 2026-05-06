@@ -1,0 +1,20 @@
+{
+  "name": "yuwei5150-art-codex-plugins",
+  "interface": {
+    "displayName": "Yuwei5150 Art Codex Plugins"
+  },
+  "plugins": [
+    {
+      "name": "academic-ppt-rebuilder",
+      "source": {
+        "source": "local",
+        "path": "./plugins/academic-ppt-rebuilder"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
