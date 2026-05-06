@@ -1,6 +1,16 @@
 # academic-ppt-rebuilder
 
-A Codex skill for rebuilding academic PowerPoint decks from papers, outlines, templates, AI-generated slide reference images, and GPT-extracted PNG asset packs.
+A Codex skill/plugin for rebuilding academic PowerPoint decks from papers, outlines, templates, AI-generated slide reference images, and GPT-extracted PNG asset packs.
+
+## Recommended Install
+
+Add this repository as a Codex plugin marketplace:
+
+```bash
+codex plugin marketplace add yuwei5150-art/academic-ppt-rebuilder-skill
+```
+
+Then open Codex plugins, find **Academic PPT Rebuilder**, and install or enable it.
 
 ## What It Does
 
@@ -21,21 +31,31 @@ The skill emphasizes editable text, PPT-native shapes, academic clarity, consist
 ```text
 academic-ppt-rebuilder-skill/
   README.md
+  .agents/
+    plugins/
+      marketplace.json
+  plugins/
+    academic-ppt-rebuilder/
+      .codex-plugin/
+        plugin.json
+      skills/
+        academic-ppt-rebuilder/
+          SKILL.md
   academic-ppt-rebuilder/
     SKILL.md
     agents/
       openai.yaml
 ```
 
-## Install
+The `plugins/` folder is the recommended Codex plugin marketplace package. The top-level `academic-ppt-rebuilder/` folder is kept for manual skill installation.
+
+## Manual Skill Install
 
 Copy the `academic-ppt-rebuilder/` folder into a Codex skills directory, for example:
 
 ```text
 .agents/skills/academic-ppt-rebuilder/
 ```
-
-If your Codex environment supports installing skills from GitHub repository paths, publish this repository and install the `academic-ppt-rebuilder/` folder path from that repository.
 
 ## Use
 
