@@ -55,15 +55,19 @@ If the plugin does not appear in `/plugins` or `/skills`, use the online install
 
 ## What It Does
 
-This skill supports a staged workflow:
+This skill enforces a staged workflow. It should not analyze source materials and immediately build a PPTX. Each stage must finish, save its artifacts, and pass a stage check before the next stage starts:
 
 1. Start from papers, source materials, and presentation requirements.
-2. Use GPT to create content-satisfactory slide reference images.
+2. Use GPT to create content-satisfactory slide reference images, then pause for owner review.
 3. Use GPT to restyle those images according to a target PPT template.
 4. Use GPT to extract slide elements into PNG assets, preferably transparent-background PNG files.
 5. Use Codex to read the PNG asset pack, slide reference images, and real text.
 6. Rebuild the deck as an editable academic PowerPoint file.
 7. Output a PPTX plus an editability report.
+
+Stage 2 is the strongest gate: if the owner does not approve the content structure and layout logic, the workflow must return to content analysis and regenerate the page images until approval. No template styling, asset extraction, or PPTX rebuild should begin before Stage 2 is approved.
+
+Each run should maintain `output/stage_status.md` so later stages depend on saved artifacts rather than temporary conversation memory.
 
 The skill emphasizes editable text, PPT-native shapes, academic clarity, consistent style, and avoiding full-slide screenshot decks.
 
