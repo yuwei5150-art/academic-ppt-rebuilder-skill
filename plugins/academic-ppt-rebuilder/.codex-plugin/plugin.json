@@ -1,7 +1,7 @@
 {
   "name": "academic-ppt-rebuilder",
-  "version": "1.0.0",
-  "description": "Rebuild editable academic PowerPoint decks from papers, slide reference images, PNG assets, and real text.",
+  "version": "1.0.1",
+  "description": "Rebuild editable academic PowerPoint decks through a staged, owner-reviewed workflow.",
   "author": {
     "name": "yuwei5150-art",
     "url": "https://github.com/yuwei5150-art"
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Academic PPT Rebuilder",
     "shortDescription": "Rebuild editable academic PPT decks",
-    "longDescription": "Convert academic source materials, AI-generated slide reference images, target template style, extracted PNG asset packs, and real text into editable academic PowerPoint decks with a clear editability report.",
+    "longDescription": "Convert academic source materials, AI-generated slide reference images, target template style, extracted PNG asset packs, and real text into editable academic PowerPoint decks. The workflow is staged and requires Stage 2 content page images to pass owner review before template styling, asset extraction, or PPTX rebuild begins.",
     "developerName": "yuwei5150-art",
     "category": "Productivity",
     "capabilities": [
